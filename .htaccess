@@ -1,0 +1,11 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+# RewriteCond %{HTTP_HOST} !^vesoul-edition.com$ [NC]
+# RewriteRule ^(.*)$ http://vesoul-edition.com/$1 [L,R=301]
+
+# Page theme
+RewriteRule ^([a-z0-9\&\+\_\-]*).html$ /event.php?url=$1 [L]
+
+#SetEnv PHP_VER 5
+#AddType x-mapp-php5 .php
