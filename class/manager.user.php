@@ -2,42 +2,45 @@
 
 // class correspondant à toutes les pdo du site
 
-class ManagerUsers
+class ManagerUser
 {
-	private $_db;
+	private $db;
 
 	public function __construct($db)
 	{
 		$this->setDb($db);
 	}
 
-	public function add(Users $user)
+	public function add(User $user)
 	{
-		// ajouter un user
+		$sql = $pdo->query('INSERT INTO user VALUES (NULL, "'.$id_fb.'", "'.$email.'", "'.$nom.'", "'.$prenom.'", "'.$genre.'")');
 	}
 
-	public function getUser($id)
-	{
-		// recuperer un user
+	public function get($id) {
+		$sql = $pdo->query('SELECT * FROM users WHERE id="'.$id.'"');
+		while($data = $sql->fetch(PDO::FETCH_ASSOC)) {
+			$user = new User();
+			foreach($data as $prop -> $value) {
+				$user->{$prop} = $value;
+			}
+		}
 	}
 
-	public function getListUser()
+	public function update(User $user)
 	{
-		// tableau avec tous les user
+		 $sql = $pdo->query('UPDATE user SET id_fb = "'.$id_fb.'", email = "'.$email.'", nom = "'.$nom.'", prenom = "'.$prenom.'", genre = "'.$genre.'")');
 	}
 
-	public function update(Users $user)
+	public function setDb($pdo)
 	{
-		// modifier un user 
-	}
-
-	public function setDb($db)
-	{
-		$this->$_db = $db;
+		$this->$db = $pdo;
 	}
 }
 
+function getUser($id) {
+	$user = new User();
+	$user->get($id);
+	return $user;
+}
+
 ?>
-
-
-// read, delete, update
