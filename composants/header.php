@@ -23,7 +23,7 @@
 		<link rel="stylesheet" href="layout/css/jquery-ui.1.11.2.css">
 		<link rel="stylesheet" href="layout/css/style.css">
 		
-		<script text="javascript" src="layout/js/jquery-ui.1.11.2.min.js"></script>
 		<script text="javascript" src="layout/js/jquery-1.11.2.min.js"></script>
+		<script text="javascript" src="layout/js/jquery-ui.1.11.2.min.js"></script>
 		<script text="javascript" src="layout/js/script.js"></script>
 	</head>
