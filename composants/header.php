@@ -1,12 +1,15 @@
 <?php
 	session_start();
 	date_default_timezone_set('Europe/Paris');
-
-	$host = "localhost";
-	$user = "root";
-	$pass = "";
-	$bdd = "meetus";
-	$db = mysqli_connect($host,$user,$pass,$bdd) or die("Error SQL" . mysqli_error($db));  
+		
+	try {
+	    $pdo = new PDO('mysql:host=localhost;dbname=seeyouthere', 'root', '');
+	}
+	catch(Exception $e) {
+	    echo 'Echec de la connexion à la base de données';
+	    exit();
+	}
+ 
 	
 	include('class/user.class.php');
 	include('class/event.class.php');
