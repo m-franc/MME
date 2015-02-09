@@ -7,7 +7,7 @@
 #
 # Hôte: 127.0.0.1 (MySQL 5.6.21)
 # Base de données: seeyouthere
-# Temps de génération: 2015-02-09 09:10:56 +0000
+# Temps de génération: 2015-02-09 09:43:50 +0000
 # ************************************************************
 
 
@@ -27,10 +27,10 @@ DROP TABLE IF EXISTS `event`;
 
 CREATE TABLE `event` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `code_pi` int(255) NOT NULL,
-  `date_creation` int(255) NOT NULL,
-  `date_modif` int(255) NOT NULL,
-  `date_close` int(255) NOT NULL,
+  `code_pi` int(255) DEFAULT NULL,
+  `date_creation` int(255) DEFAULT NULL,
+  `date_modif` int(255) DEFAULT NULL,
+  `date_close` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -63,11 +63,12 @@ DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `id_fb` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
-  `genre` varchar(255) NOT NULL DEFAULT '',
+  `id_fb` varchar(255) DEFAULT '',
+  `email` varchar(255) DEFAULT '',
+  `nom` varchar(255) DEFAULT '',
+  `prenom` varchar(255) DEFAULT '',
+  `genre` varchar(255) DEFAULT '',
+  `photo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

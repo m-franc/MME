@@ -1,31 +1,15 @@
 <?php
 class User {
 
-	public $id;
-	public $id_FB;
-	public $email_FB;
-	public $firstname;
-	public $lastname;
-	public $picture;
-	public $genre;
+	private $id;
+	private $id_FB;
+	private $email_FB;
+	private $firstname;
+	private $lastname;
+	private $picture;
+	private $genre;
 
-	public function get($id) {
-		$sql = $pdo->query('SELECT * FROM users WHERE id="'.$_id.'"');
-		while($data = $sql->fetch(PDO::FETCH_ASSOC)) {
-			$user = new User();
-			foreach($data as $prop -> $value) {
-				$user->{$prop} = $value;
-			}
-		}
-	}
-
-	public function create() {
-		
-	}
-
-	public function update() {
-
-	}
+	
 
 }
 
