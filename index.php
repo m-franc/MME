@@ -1,8 +1,10 @@
 <?php
-	include('header.php');
-	include('presentation.php');
-	include('connect_FB');
-	include('rappel.php');
-	include('invitation_ami.php');
-	include('creation_event.php');
+	include('composants/header.php');
+	include('composants/user.php');
+	include('traitements/test.user.php');
+	include('composants/presentation.php');
+	include('composants/connect_FB.php');
+	include('composants/rappel.php');
+	include('composants/invitation_ami.php');
+	include('composants/creation_event.php');
 ?>

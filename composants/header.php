@@ -1,25 +1,27 @@
 <?php
 	session_start();
 	date_default_timezone_set('Europe/Paris');
-		
+
 	try {
-	    $pdo = new PDO('mysql:host=localhost;dbname=seeyouthere', 'root', '');
+	    $db = new PDO('mysql:host=localhost;dbname=seeyouthere', 'root', '');
 	}
 	catch(Exception $e) {
 	    echo 'Echec de la connexion à la base de données';
 	    exit();
 	}
- 
-	
-	include('class/user.class.php');
-	include('class/event.class.php');
 
+	require('class/user.class.php');
+	require('class/user.manager.php');
+	//require('class/event.class.php');
+	//require('class/event.manager.php');
+
+	$manager = new ManagerUser($db);
 ?>
 <!doctype html>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<title>MeetUs</title>
+		<title>See You There</title>
 		<link rel="stylesheet" href="layout/css/jquery-ui.1.11.2.css">
 		<link rel="stylesheet" href="layout/css/style.css">
 		

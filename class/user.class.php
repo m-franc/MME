@@ -1,63 +1,30 @@
 <?php
+
 class User {
 
-	private $id;
-	private $id_fb;
-	private $email;
-	private $nom;
-	private $prenom;
-	private $genre;
-
-	
-	public function hydrate(array $donnees) {
-	  
-	  foreach ($donnees as $key => $value) {
-	    // On récupère le nom du setter correspondant à l'attribut.
-	    $method = 'set'.ucfirst($key);
-	        
-	    // Si le setter correspondant existe.
-	    if (method_exists($this, $method))
-	    {
-	      // On appelle le setter.
-	      $this->$method($value);
-	    }
-	  }
-	}
+	public $id;
+	public $id_fb;
+	public $email;
+	public $nom;
+	public $prenom;
+	public $genre;
 
 
-	public function id() {
-		return $this->id;
-	}
-
-	public function id_fb() {
-		return $this->id_fb;
-	}
-
-	public function nom() {
-		return $this->nom;
-	}
-
-	public function prenom() {
-		return $this->prenom;
-	}
-
-	public function email() {
-		return $this->email;
-	}
-
-	public function genre() {
-		return $this->genre;
+	public function setId_fb($id_fb) {
+		if(is_string($id_fb)) {
+			$this->id_fb = strip_tags(stripslashes($id_fb));
+		}
 	}
 	
 	public function setNom($nom) {
 		if(is_string($nom)) {
-			$this->nom = $nom;
+			$this->nom = strip_tags(stripslashes($nom));
 		}
 	}
 
 	public function setPrenom($prenom) {
 		if(is_string($prenom)) {
-			$this->prenom = $prenom;
+			$this->prenom = strip_tags(stripcslashes($prenom));
 		}
 	}
 
@@ -69,7 +36,7 @@ class User {
 
 	public function setGenre($genre) {
 		if(is_string($genre)) {
-			$this->genre = $genre;
+			$this->genre = strip_tags(stripslashes($genre));
 		}
 	}
 }
