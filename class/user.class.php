@@ -8,6 +8,7 @@ class User {
 	public $nom;
 	public $prenom;
 	public $genre;
+	public $photo;
 
 
 	public function setId_fb($id_fb) {
@@ -39,8 +40,12 @@ class User {
 			$this->genre = strip_tags(stripslashes($genre));
 		}
 	}
+
+	public function setPhoto($photo) {
+		if(is_string($photo)) {
+			$this->photo = $photo;
+		}
+	}
 }
-
-
 
 ?>

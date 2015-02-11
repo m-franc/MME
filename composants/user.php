@@ -5,6 +5,7 @@
 		<input type="text" name="prenom" placeholder="prenom"/>
 		<input type="text" name="email" placeholder="email"/>
 		<input type="text" name="genre" placeholder="genre"/>
+		<input type="text" name="photo" placeholder="chemin de la photo"/>
 		<input type="submit" value="envoyer"/>
 	</form>	
 </html>
